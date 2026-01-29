@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+  internetbanking:
+    image: nikhil21agrawal/ib-image:latest
+    ports:
+      - "81:80"
+    deploy:
+      replicas: 3
+    volumes:
+      - /var/lib/internetbanking
+  mobilebanking:
+    image: nikhil21agrawal/mb-image:latest
+    ports:
+      - "82:80"
+    deploy:
+      replicas: 3
+    volumes:
+      - /var/lib/mobilebanking
+  insurance:
+    image: nikhil21agrawal/insurance-image:latest
+    ports:
+      - "83:80"
+    deploy:
+      replicas: 3
+    volumes:
+      - /var/lib/insurance
+  loan:
+    image: nikhil21agrawal/loans-image:latest
+    ports:
+      - "84:80"
+    deploy:
+      replicas: 3
+    volumes:
+      - /var/lib/loan
